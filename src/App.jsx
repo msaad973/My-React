@@ -1,20 +1,22 @@
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import Card from "./components/Card"
+import Home from "./components/Home"
+import About from "./components/About"
+import Contact from "./components/Contact"
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 function App() {
     return (
-        <>
+        <Router>
             <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
             <Footer />
-            <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", justifyContent: "center", alignItems: "center", gap: "20px" }}>
-                <Card Title="Card 1" btnText="Read More" desription="My Name is Harsh , I am a Frontend Developer, I am learning React, I am a Frontend Developer, I am learning React" />
-                <Card Title="Card 2" btnText="Add to Cart" desription="My Name is Harsh , I am a Frontend Developer, I am learning React, I am a Frontend Developer, I am learning React" />
-                <Card Title="Card 3" btnText="Submit" desription="My Name is Harsh , I am a Frontend Developer, I am learning React, I am a Frontend Developer, I am learning React" />
-                <Card Title="Card 4" btnText="Save" desription="My Name is Harsh , I am a Frontend Developer, I am learning React, I am a Frontend Developer, I am learning React" />
-                <Card Title="Card 5" btnText="Yes" desription="My Name is Harsh , I am a Frontend Developer, I am learning React, I am a Frontend Developer, I am learning React" />
-                <Card Title="Card 6" btnText="No" desription="My Name is Harsh , I am a Frontend Developer, I am learning React, I am a Frontend Developer, I am learning React" />
-            </section>
-        </>
+        </Router>
     )
 }
 
