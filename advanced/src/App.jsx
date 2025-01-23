@@ -1,17 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    alert('you clicked me');
+  })
   return (
     <>
-      <h3 style={{ color: 'red', textAlign: 'center' }}>Advanced React</h3>
-      <div className='card'>
-        <button onClick={() => setCount(prevCount => prevCount + 1)} >count is {count}</button>
-
-      </div>
-
+     <div>The Count is {count}</div>
+     <button onClick={()=>{setCount(count+2)}}>Update Count</button>
 
     </>
   );
